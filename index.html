@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a33">
+
+  <meta
+    name="description"
+    content="Bertrand Helios — Élections du Conseil National de l'Ordre des Infirmiers 2026"
+  >
+
+  <title>Bertrand Helios — Élections 2026</title>
+
+  <style>
+    :root {
+      --navy: #071a33;
+      --blue: #1677c8;
+      --text: #172337;
+      --muted: #667085;
+      --border: #dce5ee;
+      --shadow: 0 16px 40px rgba(4, 20, 42, .14);
+
+      --green-bg: #edf8f1;
+      --green-border: #c8e7d2;
+      --green-icon: #238653;
+
+      --orange-bg: #fff5e9;
+      --orange-border: #f1d4ad;
+      --orange-icon: #d97820;
+
+      --red-bg: #fff0f0;
+      --red-border: #f0cccc;
+      --red-icon: #c65353;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(
+          180deg,
+          #f4f8fc 0%,
+          #ffffff 45%,
+          #f4f8fc 100%
+        );
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    .page {
+      width: min(900px, calc(100% - 24px));
+      margin: auto;
+      padding: 30px 0 50px;
+    }
+
+    /* header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 8vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .header h2 {
+      margin: 10px auto 0;
+      color: var(--blue);
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    /* profession de foi */
+    .faith-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      min-height: 65px;
+      margin: 0 auto 13px;
+      padding: 13px 18px;
+      border-radius: 17px;
+      color: white;
+      background: linear-gradient(135deg, #075da6, #1687df);
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(4, 20, 42, .16);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .faith-button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .faith-icon {
+      font-size: 1.45rem;
+    }
+
+    .faith-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+
+    .faith-title {
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .faith-subtitle {
+      font-size: .76rem;
+      opacity: .85;
+      font-weight: 600;
+    }
+
+    /* vote dates/countdown */
+    .vote-dates {
+      width: 100%;
+      margin: 0 auto 20px;
+      padding: 14px 20px 17px;
+      border-radius: 18px;
+      color: white;
+      background: var(--navy);
+      text-align: center;
+      box-shadow: 0 7px 20px rgba(4,20,42,.13);
+    }
+
+    .vote-date-text {
+      font-size: 1rem;
+      line-height: 1.4;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .countdown-label {
+      margin-top: 10px;
+      color: #b9c8d9;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .countdown-time {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 16px;
+      margin-top: 5px;
+    }
+
+    .countdown-unit {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .countdown-number {
+      color: #ff4b4b;
+      font-size: clamp(1.7rem,5vw,2.35rem);
+      line-height: 1;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.04em;
+      text-shadow: 0 0 14px rgba(255,75,75,.15);
+    }
+
+    .countdown-unit-label {
+      color: #d6dee8;
+      font-size: .6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* voting help */
+    .vote-info {
+      width: 100%;
+      margin: 0 auto 24px;
+      padding: 20px 21px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(4,20,42,.07);
+    }
+
+    .vote-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .vote-header h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.15rem,4vw,1.4rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .vote-header p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .step-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 150px;
+      padding: 16px 12px;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 17px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .step-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 9px 22px rgba(4,20,42,.10);
+    }
+
+    .step-green {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+    }
+
+    .step-green .step-number {
+      background: var(--green-icon);
+    }
+
+    .step-orange {
+      background: var(--orange-bg);
+      border: 1px solid var(--orange-border);
+    }
+
+    .step-orange .step-number {
+      background: var(--orange-icon);
+    }
+
+    .step-red {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+    }
+
+    .step-red .step-number {
+      background: var(--red-icon);
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      color: white;
+      font-size: .8rem;
+      font-weight: 900;
+    }
+
+    .step-icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      display: block;
+      color: var(--navy);
+      font-size: .88rem;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .step-description {
+      display: block;
+      margin-top: 8px;
+      color: #667085;
+      font-size: .76rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .simple {
+      margin: 16px 0 0;
+      color: var(--navy);
+      text-align: center;
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    /* rappels calendrier */
+    .reminder-section {
+      width: 100%;
+      margin: 0 auto 24px;
+    }
+
+    .reminder-box {
+      padding: 22px 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(4,20,42,.07);
+      text-align: center;
+    }
+
+    .reminder-icon {
+      font-size: 1.7rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .reminder-box h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: clamp(1.15rem, 4vw, 1.4rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .reminder-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 58px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 15px;
+      color: white;
+      background: linear-gradient(135deg, #075da6, #1687df);
+      font: inherit;
+      font-size: .95rem;
+      font-weight: 900;
+      line-height: 1.25;
+      cursor: pointer;
+      box-shadow: 0 9px 24px rgba(4,20,42,.14);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .reminder-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .reminder-button:active {
+      transform: translateY(0);
+    }
+
+    .reminder-status {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    /* poster */
+    .poster {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    /* mobile */
+    @media (max-width:680px) {
+
+      .page {
+        width: calc(100% - 16px);
+        padding-top: 18px;
+      }
+
+      .header {
+        margin-bottom: 17px;
+      }
+
+      .header h1 {
+        font-size: clamp(2rem,10vw,3rem);
+      }
+
+      .header h2 {
+        font-size: 1rem;
+      }
+
+      .faith-button {
+        min-height: 61px;
+        margin-bottom: 11px;
+        border-radius: 15px;
+      }
+
+      .faith-title {
+        font-size: .94rem;
+      }
+
+      .faith-subtitle {
+        font-size: .72rem;
+      }
+
+      .vote-dates {
+        width: 100%;
+        margin-bottom: 17px;
+        padding: 12px 8px 15px;
+        border-radius: 16px;
+      }
+
+      .vote-date-text {
+        font-size: .74rem;
+        white-space: normal;
+      }
+
+      .countdown-label {
+        margin-top: 10px;
+        font-size: .62rem;
+      }
+
+      .countdown-time {
+        gap: 8px;
+      }
+
+      .countdown-number {
+        font-size: 1.7rem;
+      }
+
+      .countdown-unit-label {
+        font-size: .52rem;
+      }
+
+      .vote-info {
+        width: 100%;
+        padding: 18px 14px;
+        border-radius: 17px;
+      }
+
+      .vote-header h2 {
+        font-size: 1.1rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .step-link {
+        display: grid;
+        grid-template-columns: 30px 34px minmax(0,1fr);
+        column-gap: 8px;
+        align-items: center;
+        min-height: 72px;
+        padding: 10px 11px;
+        text-align: left;
+      }
+
+      .step-number {
+        margin: 0;
+      }
+
+      .step-icon {
+        margin: 0;
+        text-align: center;
+      }
+
+      .step-title,
+      .step-description {
+        grid-column: 3;
+      }
+
+      .step-title {
+        font-size: .84rem;
+        line-height: 1.3;
+      }
+
+      .step-description {
+        margin-top: 4px;
+        font-size: .74rem;
+        line-height: 1.3;
+      }
+
+      .simple {
+        font-size: .8rem;
+      }
+
+      .reminder-box {
+        padding: 20px 14px;
+        border-radius: 17px;
+      }
+
+      .reminder-button {
+        font-size: .88rem;
+        min-height: 56px;
+        padding: 11px 12px;
+      }
+
+      .poster {
+        border-radius: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- header -->
+    <header class="header">
+      <h1>BERTRAND HELIOS</h1>
+      <h2>Élections du Conseil National de l'Ordre des Infirmiers 2026</h2>
+    </header>
+
+
+    <!-- profession de foi -->
+    <a
+      class="faith-button"
+      href="Profession-de-foi-Bertrand-HELIOS.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="faith-icon">📄</span>
+
+      <span class="faith-text">
+        <span class="faith-title">
+          Découvrir ma profession de foi
+        </span>
+
+        <span class="faith-subtitle">
+          Mes engagements pour les infirmiers
+        </span>
+      </span>
+    </a>
+
+
+    <!-- vote + countdown -->
+    <div class="vote-dates">
+
+      <div class="vote-date-text">
+        🗓️ Vote du jeudi 15 octobre 2026 à 14 h
+        au vendredi 30 octobre 2026 à 14 h
+      </div>
+
+      <div class="countdown-label">
+        Ouverture du vote dans
+      </div>
+
+      <div class="countdown-time" id="countdown">
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-unit-label">j</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-unit-label">h</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-unit-label">min</span>
+        </div>
+
+        <div class="countdown-unit">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-unit-label">sec</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- aide au vote -->
+    <section class="vote-info">
+
+      <div class="vote-header">
+
+        <h2>🔑 Besoin d’aide pour voter ?</h2>
+
+        <p>
+          Cliquez sur l’étape qui correspond à votre situation.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <!-- étape 1 -->
+        <a
+          class="step-link step-green"
+          href="https://onielections2026.vote.voxaly.com/identification"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="step-number">1</span>
+          <span class="step-icon">🗳️</span>
+
+          <span class="step-title">
+            J’ai mon code d’accès pour le vote
+          </span>
+
+          <span class="step-description">
+            Je clique ici pour voter.
+          </span>
+        </a>
+
+
+        <!-- étape 2 -->
+        <a
+          class="step-link step-orange"
+          href="https://onielections2026.vote.voxaly.com/reassort/codeacces"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="step-number">2</span>
+          <span class="step-icon">🔑</span>
+
+          <span class="step-title">
+            J’ai perdu mon code d’accès
+          </span>
+
+          <span class="step-description">
+            Je clique ici pour le récupérer.
+          </span>
+        </a>
+
+
+        <!-- étape 3 -->
+        <a
+          class="step-link step-red"
+          href="https://espace-membres.ordre-infirmiers.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="step-number">3</span>
+          <span class="step-icon">⚕️</span>
+
+          <span class="step-title">
+            Je ne connais plus mon numéro ordinal
+          </span>
+
+          <span class="step-description">
+            Je clique ici pour le retrouver.
+          </span>
+        </a>
+
+      </div>
+
+
+      <p class="simple">
+        ⏱️ Quelques minutes suffisent pour voter Bertrand HELIOS.
+        <strong>Merci pour votre participation !</strong>
+      </p>
+
+    </section>
+
+
+    <!-- =====================
+         RAPPELS CALENDRIER
+         ===================== -->
+
+    <section class="reminder-section">
+
+      <div class="reminder-box">
+
+        <div class="reminder-icon">
+          🔔
+        </div>
+
+        <h2>
+          Ne laissez pas passer votre vote
+        </h2>
+
+        <button
+          type="button"
+          id="addAllReminders"
+          class="reminder-button"
+        >
+          📅 Programmer mes 5 rappels dans le calendrier
+        </button>
+
+        <p
+          id="reminderStatus"
+          class="reminder-status"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- affiche -->
+    <img
+      class="poster"
+      src="affiche-campagne.jpg"
+      alt="Affiche de campagne de Bertrand Helios"
+    >
+
+  </main>
+
+
+  <!-- =====================
+       SCRIPTS
+       ===================== -->
+
+  <script>
+
+    /* =========================
+       COMPTE À REBOURS
+       ========================= */
+
+    const voteStart =
+      new Date("2026-10-15T14:00:00+02:00").getTime();
+
+
+    function updateCountdown() {
+
+      const now =
+        new Date().getTime();
+
+      const distance =
+        voteStart - now;
+
+
+      if (distance <= 0) {
+
+        document.getElementById("countdown").innerHTML = `
+          <span
+            class="countdown-number"
+            style="font-size:1.8rem;"
+          >
+            🗳️ VOTE OUVERT
+          </span>
+        `;
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (distance %
+          (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (distance %
+          (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (distance %
+          (1000 * 60)) /
+          1000
+        );
+
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* =========================
+       RAPPELS CALENDRIER
+       ========================= */
+
+    const campaignSite =
+      "https://bertrandhelios.github.io/electionCIDOI2026/";
+
+
+    const reminderEvents = [
+
+      {
+        start: "20261015T120000Z",
+        end: "20261015T121500Z",
+
+        title:
+          "Voter Bertrand HELIOS — ouverture des votes",
+
+        description:
+          "Les votes des élections CIDOI 51-08 sont ouverts depuis 14 h. " +
+          "Retrouvez la démarche, les informations et l'accès au vote sur le site de campagne : " +
+          campaignSite
+      },
+
+
+      {
+        start: "20261019T100000Z",
+        end: "20261019T101500Z",
+
+        title:
+          "Voter Bertrand HELIOS — pensez à voter",
+
+        description:
+          "Pensez à voter pour les élections CIDOI 51-08. " +
+          "Retrouvez toutes les informations sur le site de campagne : " +
+          campaignSite
+      },
+
+
+      {
+        start: "20261026T100000Z",
+        end: "20261026T101500Z",
+
+        title:
+          "Voter Bertrand HELIOS — pensez à voter",
+
+        description:
+          "Il reste quelques jours pour voter aux élections CIDOI 51-08. " +
+          "Retrouvez toutes les informations sur le site de campagne : " +
+          campaignSite
+      },
+
+
+      {
+        start: "20261030T080000Z",
+        end: "20261030T081500Z",
+
+        title:
+          "Voter Bertrand HELIOS — dernier jour",
+
+        description:
+          "Dernier jour pour voter aux élections CIDOI 51-08. " +
+          "La clôture des votes est prévue à 14 h. " +
+          "Retrouvez toutes les informations sur le site de campagne : " +
+          campaignSite
+      },
+
+
+      {
+        start: "20261030T113000Z",
+        end: "20261030T114500Z",
+
+        title:
+          "Voter Bertrand HELIOS — dernier rappel",
+
+        description:
+          "Dernier rappel : les votes ferment aujourd'hui à 14 h. " +
+          "Retrouvez les informations et l'accès au vote sur le site de campagne : " +
+          campaignSite
+      }
+
+    ];
+
+
+    function escapeICS(value) {
+
+      return value
+        .replace(/\\/g, "\\\\")
+        .replace(/\r?\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;");
+
+    }
+
+
+    function createICS() {
+
+      let ics =
+        "BEGIN:VCALENDAR\r\n" +
+        "VERSION:2.0\r\n" +
+        "PRODID:-//Bertrand Helios//Elections CIDOI 2026//FR\r\n" +
+        "CALSCALE:GREGORIAN\r\n" +
+        "METHOD:PUBLISH\r\n" +
+        "X-WR-CALNAME:Elections CIDOI 51-08 — Bertrand HELIOS\r\n";
+
+
+      reminderEvents.forEach(
+        function(event, index) {
+
+          ics +=
+            "BEGIN:VEVENT\r\n" +
+
+            "UID:cidoi-2026-bertrand-" +
+            index +
+            "@bertrandhelios.github.io\r\n" +
+
+            "DTSTAMP:20261001T120000Z\r\n" +
+
+            "DTSTART:" +
+            event.start +
+            "\r\n" +
+
+            "DTEND:" +
+            event.end +
+            "\r\n" +
+
+            "SUMMARY:" +
+            escapeICS(event.title) +
+            "\r\n" +
+
+            "DESCRIPTION:" +
+            escapeICS(event.description) +
+            "\r\n" +
+
+            "URL:" +
+            campaignSite +
+            "\r\n" +
+
+            "BEGIN:VALARM\r\n" +
+            "TRIGGER:PT0M\r\n" +
+            "ACTION:DISPLAY\r\n" +
+
+            "DESCRIPTION:" +
+            escapeICS(event.title) +
+            "\r\n" +
+
+            "END:VALARM\r\n" +
+
+            "END:VEVENT\r\n";
+
+        }
+      );
+
+
+      ics +=
+        "END:VCALENDAR\r\n";
+
+
+      return ics;
+
+    }
+
+
+    document
+      .getElementById("addAllReminders")
+      .addEventListener(
+        "click",
+        function() {
+
+          const ics =
+            createICS();
+
+
+          const blob =
+            new Blob(
+              [ics],
+              {
+                type:
+                  "text/calendar;charset=utf-8"
+              }
+            );
+
+
+          const url =
+            URL.createObjectURL(blob);
+
+
+          const link =
+            document.createElement("a");
+
+
+          link.href = url;
+
+          link.download =
+            "Rappels-Elections-CIDOI-51-08-Bertrand-HELIOS.ics";
+
+
+          document.body.appendChild(link);
+
+          link.click();
+
+          link.remove();
+
+
+          setTimeout(
+            function() {
+
+              URL.revokeObjectURL(url);
+
+            },
+            1000
+          );
+
+
+          document
+            .getElementById("reminderStatus")
+            .textContent =
+              "📅 Les 5 rappels ont été préparés. " +
+              "Ouvrez le fichier pour les ajouter à votre calendrier.";
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
