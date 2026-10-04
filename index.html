@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a33">
+
+  <meta
+    name="description"
+    content="Bertrand Helios — Élections interdépartementales 2026 — Ordre des infirmiers de la Marne et des Ardennes"
+  >
+
+  <title>Bertrand Helios — Élections interdépartementales 2026</title>
+
+  <style>
+    :root {
+      --navy: #071a33;
+      --blue: #1677c8;
+      --blue-dark: #0a63aa;
+      --blue-light: #eaf5ff;
+      --green: #16845b;
+      --green-light: #eaf8f2;
+      --orange: #e67e22;
+      --orange-light: #fff5e9;
+      --text: #172337;
+      --muted: #667085;
+      --border: #dce5ee;
+      --white: #ffffff;
+      --shadow: 0 16px 40px rgba(4, 20, 42, .14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(
+          180deg,
+          #f4f8fc 0%,
+          #ffffff 45%,
+          #f4f8fc 100%
+        );
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    .page {
+      width: min(920px, calc(100% - 24px));
+      margin: auto;
+      padding: 30px 0 50px;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 8vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .header h2 {
+      margin: 12px auto 0;
+      max-width: 760px;
+      color: var(--blue);
+      font-size: clamp(1rem, 3.5vw, 1.35rem);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .header p {
+      margin: 5px auto 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+
+    /* =========================
+       4 BOUTONS
+       ========================= */
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+
+    .button {
+      position: relative;
+      min-height: 88px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      gap: 13px;
+      padding: 15px 18px;
+
+      border-radius: 18px;
+      text-decoration: none;
+
+      box-shadow: 0 8px 24px rgba(4, 20, 42, .09);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .button-icon {
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 14px;
+      font-size: 1.5rem;
+    }
+
+    .button-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .button-title {
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .button-subtitle {
+      font-size: .78rem;
+      line-height: 1.3;
+      opacity: .78;
+      font-weight: 600;
+    }
+
+    /* Vote */
+
+    .vote {
+      color: white;
+      background: linear-gradient(135deg, #075da6, #1687df);
+    }
+
+    .vote .button-icon {
+      background: rgba(255,255,255,.16);
+    }
+
+    /* Code perdu */
+
+    .code {
+      color: var(--navy);
+      background: var(--orange-light);
+      border: 1px solid #f3d5b1;
+    }
+
+    .code .button-icon {
+      background: #ffe3c5;
+    }
+
+    /* Ordre */
+
+    .order {
+      color: var(--navy);
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .order .button-icon {
+      background: var(--blue-light);
+    }
+
+    /* Profession de foi */
+
+    .faith {
+      color: var(--navy);
+      background: var(--blue-light);
+      border: 1px solid #cfe7fb;
+    }
+
+    .faith .button-icon {
+      background: #d8edfc;
+    }
+
+    /* =========================
+       MINI TUTO
+       ========================= */
+
+    .vote-info {
+      max-width: 760px;
+      margin: 0 auto 25px;
+
+      padding: 23px 24px;
+
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      box-shadow:
+        0 8px 25px rgba(4, 20, 42, .07);
+    }
+
+    .vote-info-header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .vote-info h2 {
+      margin: 0;
+
+      color: var(--navy);
+      font-size: clamp(1.2rem, 4vw, 1.45rem);
+      line-height: 1.25;
+    }
+
+    .vote-info-intro {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .vote-dates {
+      display: inline-block;
+
+      margin-top: 12px;
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      color: white;
+      background: var(--navy);
+
+      font-size: .84rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    /* Étapes */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .steps li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 14px 11px;
+
+      text-align: center;
+
+      background: #f7fafc;
+      border: 1px solid #e5edf4;
+      border-radius: 15px;
+    }
+
+    .number {
+      width: 30px;
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 8px;
+
+      border-radius: 50%;
+
+      color: white;
+      background: var(--blue);
+
+      font-size: .82rem;
+      font-weight: 900;
+    }
+
+    .step-text {
+      color: #43546a;
+      font-size: .82rem;
+      line-height: 1.4;
+    }
+
+    .step-text strong {
+      color: var(--navy);
+    }
+
+    .simple {
+      margin: 17px 0 0;
+
+      color: var(--navy);
+      text-align: center;
+
+      font-size: .92rem;
+      font-weight: 800;
+    }
+
+    /* =========================
+       AFFICHЕ
+       ========================= */
+
+    .poster {
+      display: block;
+
+      width: min(100%, 760px);
+      height: auto;
+
+      margin: 0 auto;
+
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 680px) {
+
+      .page {
+        width: min(100% - 16px, 600px);
+        padding-top: 18px;
+      }
+
+      .header {
+        margin-bottom: 19px;
+      }
+
+      .header h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .header h2 {
+        font-size: 1rem;
+      }
+
+      .header p {
+        font-size: .86rem;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        margin-bottom: 18px;
+      }
+
+      .button {
+        min-height: 67px;
+        padding: 11px 14px;
+        border-radius: 15px;
+      }
+
+      .button-icon {
+        flex-basis: 43px;
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+        font-size: 1.3rem;
+      }
+
+      .button-title {
+        font-size: .94rem;
+      }
+
+      .button-subtitle {
+        font-size: .75rem;
+      }
+
+      .vote-info {
+        margin-bottom: 20px;
+        padding: 19px 15px;
+        border-radius: 17px;
+      }
+
+      .vote-info h2 {
+        font-size: 1.13rem;
+      }
+
+      .vote-info-intro {
+        font-size: .84rem;
+      }
+
+      .vote-dates {
+        font-size: .76rem;
+        padding: 7px 11px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+
+        align-items: center;
+
+        padding: 10px 11px;
+
+        text-align: left;
+      }
+
+      .number {
+        margin: 0;
+      }
+
+      .step-text {
+        font-size: .84rem;
+      }
+
+      .simple {
+        font-size: .88rem;
+      }
+
+      .poster {
+        border-radius: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- =========================
+         EN-TÊTE
+         ========================= -->
+
+    <header class="header">
+
+      <h1>BERTRAND HELIOS</h1>
+
+      <h2>
+        Élections interdépartementales 2026
+      </h2>
+
+      <p>
+        Ordre des infirmiers de la Marne et des Ardennes
+      </p>
+
+    </header>
+
+
+    <!-- =========================
+         ACCÈS RAPIDES
+         ========================= -->
+
+    <nav class="actions" aria-label="Accès rapides">
+
+      <!-- 1. J'AI MON CODE -->
+
+      <a
+        class="button vote"
+        href="https://onielections2026.vote.voxaly.com/identification"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-icon">🗳️</span>
+
+        <span class="button-text">
+          <span class="button-title">
+            J’ai mon code → VOTER
+          </span>
+
+          <span class="button-subtitle">
+            Accéder directement à l’espace électeur
+          </span>
+        </span>
+
+      </a>
+
+
+      <!-- 2. CODE PERDU -->
+
+      <a
+        class="button code"
+        href="https://onielections2026.vote.voxaly.com/reassort/codeacces"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-icon">🔑</span>
+
+        <span class="button-text">
+          <span class="button-title">
+            J’ai perdu mon code
+          </span>
+
+          <span class="button-subtitle">
+            Récupérer mon code d’accès au vote
+          </span>
+        </span>
+
+      </a>
+
+
+      <!-- 3. NUMÉRO ORDINAL OUBLIÉ -->
+
+      <a
+        class="button order"
+        href="https://espace-membres.ordre-infirmiers.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-icon">⚕️</span>
+
+        <span class="button-text">
+          <span class="button-title">
+            J’ai oublié mon numéro ordinal
+          </span>
+
+          <span class="button-subtitle">
+            Accéder à mon espace membre de l’Ordre
+          </span>
+        </span>
+
+      </a>
+
+
+      <!-- 4. PROFESSION DE FOI -->
+
+      <a
+        class="button faith"
+        href="Profession-de-foi-Bertrand-HELIOS.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="button-icon">📄</span>
+
+        <span class="button-text">
+          <span class="button-title">
+            Ma profession de foi
+          </span>
+
+          <span class="button-subtitle">
+            Découvrir mes engagements
+          </span>
+        </span>
+
+      </a>
+
+    </nav>
+
+
+    <!-- =========================
+         MINI TUTO
+         ========================= -->
+
+    <section class="vote-info">
+
+      <div class="vote-info-header">
+
+        <h2>
+          🔑 Besoin d’aide pour voter ?
+        </h2>
+
+        <p class="vote-info-intro">
+          Vous avez perdu votre code ou votre numéro ordinal ?
+        </p>
+
+        <div class="vote-dates">
+          🗓️ Vote du 15 octobre à 14 h au 30 octobre 2026 à 14 h
+        </div>
+
+      </div>
+
+
+      <ol class="steps">
+
+        <li>
+
+          <span class="number">1</span>
+
+          <span class="step-text">
+            <strong>Je n’ai plus mon numéro ordinal ?</strong><br>
+            Je me connecte à mon espace membre de l’Ordre.
+          </span>
+
+        </li>
+
+
+        <li>
+
+          <span class="number">2</span>
+
+          <span class="step-text">
+            <strong>Je n’ai plus mon code de vote ?</strong><br>
+            Je clique sur « J’ai perdu mon code ».
+          </span>
+
+        </li>
+
+
+        <li>
+
+          <span class="number">3</span>
+
+          <span class="step-text">
+            <strong>J’ai mes identifiants ?</strong><br>
+            Je retourne dans l’espace électeur et je vote !
+          </span>
+
+        </li>
+
+      </ol>
+
+
+      <p class="simple">
+        ⏱️ Quelques minutes suffisent.
+        <strong>Votez Bertrand HELIOS ! 🗳️</strong>
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         AFFICHE DE CAMPAGNE
+         ========================= -->
+
+    <img
+      class="poster"
+      src="affiche-campagne.jpg"
+      alt="Affiche de campagne de Bertrand Helios"
+    >
+
+  </main>
+
+</body>
+</html>
