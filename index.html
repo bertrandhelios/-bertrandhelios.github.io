@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#071a33">
+  <meta name="description"
+        content="Bertrand Helios — Candidat Collège Public Marne-Ardennes — Élections ordinales infirmières 2026">
+
+  <title>Bertrand Helios — Élections ordinales 2026</title>
+
+  <style>
+    :root {
+      --navy: #071a33;
+      --navy-light: #0d2a4d;
+      --blue: #1677c8;
+      --blue-light: #eaf5ff;
+      --white: #ffffff;
+      --text: #172337;
+      --muted: #667085;
+      --border: #dce5ee;
+      --shadow: 0 20px 55px rgba(4, 20, 42, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(22, 119, 200, .18),
+          transparent 38%
+        ),
+        linear-gradient(
+          180deg,
+          #f6f9fc 0%,
+          #ffffff 55%,
+          #f5f8fb 100%
+        );
+    }
+
+    .page {
+      width: min(980px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 34px 0 50px;
+    }
+
+    /* =========================
+       EN-TÊTE
+       ========================= */
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+      animation: fadeUp .7s ease both;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 15px;
+      margin-bottom: 14px;
+
+      border-radius: 999px;
+
+      background: var(--navy);
+      color: #8fc9f7;
+
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: clamp(2.1rem, 7vw, 4rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 900;
+    }
+
+    .identity {
+      max-width: 720px;
+      margin: 13px auto 0;
+
+      color: var(--muted);
+
+      font-size: clamp(.95rem, 2.5vw, 1.12rem);
+      line-height: 1.5;
+    }
+
+    /* =========================
+       AFFICHE
+       ========================= */
+
+    .poster-container {
+      display: flex;
+      justify-content: center;
+
+      margin: 28px auto 34px;
+
+      animation: fadeUp .75s .08s ease both;
+    }
+
+    .poster {
+      display: block;
+
+      width: min(100%, 760px);
+      height: auto;
+
+      border-radius: 22px;
+
+      box-shadow: var(--shadow);
+
+      /*
+       * L'image n'est PAS modifiée.
+       */
+    }
+
+    /* =========================
+       BOUTONS
+       ========================= */
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+
+      max-width: 900px;
+      margin: 0 auto;
+
+      animation: fadeUp .75s .16s ease both;
+    }
+
+    .button {
+      min-height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      padding: 18px 20px;
+
+      border-radius: 18px;
+
+      text-decoration: none;
+
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
+
+      text-align: center;
+
+      box-shadow: 0 10px 25px rgba(4, 20, 42, .10);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 16px 32px rgba(4, 20, 42, .16);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .icon {
+      font-size: 1.55rem;
+      flex-shrink: 0;
+    }
+
+    /* Vote */
+
+    .vote {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0a63aa,
+          #1687df
+        );
+    }
+
+    /* Ordre */
+
+    .order {
+      color: var(--navy);
+
+      background: white;
+
+      border: 1px solid var(--border);
+    }
+
+    /* Profession de foi */
+
+    .faith {
+      color: var(--navy);
+
+      background: var(--blue-light);
+
+      border: 1px solid #cfe7fb;
+    }
+
+    /* =========================
+       SLOGAN
+       ========================= */
+
+    .manifesto {
+      margin: 44px auto 0;
+
+      text-align: center;
+
+      animation: fadeUp .75s .24s ease both;
+    }
+
+    .small-title {
+      color: var(--blue);
+
+      font-size: .82rem;
+      font-weight: 900;
+
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .manifesto h2 {
+      margin: 9px 0 10px;
+
+      color: var(--navy);
+
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+
+      letter-spacing: -.025em;
+    }
+
+    .separator {
+      width: 58px;
+      height: 4px;
+
+      margin: 24px auto;
+
+      border-radius: 999px;
+
+      background: var(--blue);
+    }
+
+    .slogan {
+      margin: 0;
+
+      color: #41546c;
+
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 750;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      margin-top: 42px;
+
+      color: #8a96a5;
+
+      font-size: .78rem;
+      line-height: 1.5;
+
+      text-align: center;
+    }
+
+    /* =========================
+       ANIMATION
+       ========================= */
+
+    @keyframes fadeUp {
+
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 720px) {
+
+      .page {
+        width: min(100% - 20px, 620px);
+        padding-top: 22px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .button {
+        min-height: 68px;
+      }
+
+      .poster {
+        border-radius: 16px;
+      }
+
+      footer {
+        margin-top: 30px;
+      }
+
+    }
+
+    /* Respecte les préférences
+       d'accessibilité */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <!-- =========================
+         IDENTITÉ
+         ========================= -->
+
+    <header>
+
+      <div class="eyebrow">
+        Élections ordinales 2026
+      </div>
+
+      <h1>
+        BERTRAND HELIOS
+      </h1>
+
+      <p class="identity">
+        Candidat Collège Public — Marne Ardennes<br>
+        Infirmier en Pratique Avancée — Médecine d’Urgence — CHU de Reims
+      </p>
+
+    </header>
+
+
+    <!-- =========================
+         AFFICHE DE CAMPAGNE
+
+         IMPORTANT :
+         Le fichier doit s'appeler
+         "affiche-campagne.png"
+         et être placé à côté
+         de index.html.
+         ========================= -->
+
+    <section
+      class="poster-container"
+      aria-label="Affiche de campagne"
+    >
+
+      <img
+        class="poster"
+        src="affiche-campagne.png"
+        alt="Affiche de campagne de Bertrand Helios — élections ordinales infirmières 2026"
+      >
+
+    </section>
+
+
+    <!-- =========================
+         LIENS PRINCIPAUX
+         ========================= -->
+
+    <nav
+      class="actions"
+      aria-label="Liens principaux"
+    >
+
+
+      <!-- ESPACE ÉLECTEUR -->
+
+      <a
+        class="button vote"
+        href="https://onielections2026.vote.voxaly.com/identification"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="icon">
+          🗳️
+        </span>
+
+        <span>
+          Accéder à l’espace électeur
+        </span>
+
+      </a>
+
+
+      <!-- ESPACE ORDRE INFIRMIER -->
+
+      <a
+        class="button order"
+        href="https://espace-membre.ordre-infirmiers.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="icon">
+          ⚕️
+        </span>
+
+        <span>
+          Espace membre de l’Ordre
+        </span>
+
+      </a>
+
+
+      <!-- PROFESSION DE FOI -->
+
+      <a
+        class="button faith"
+        href="profession-de-foi.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span class="icon">
+          📄
+        </span>
+
+        <span>
+          Lire ma profession de foi
+        </span>
+
+      </a>
+
+
+    </nav>
+
+
+    <!-- =========================
+         MESSAGE DE CAMPAGNE
+         ========================= -->
+
+    <section class="manifesto">
+
+      <div class="small-title">
+        Collège Public · Marne Ardennes
+      </div>
+
+      <h2>
+        Un infirmier parmi les infirmiers
+      </h2>
+
+      <div class="separator"></div>
+
+      <p class="slogan">
+        Écouter · Informer · Accompagner · Faire évoluer
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+      Élections ordinales infirmières 2026
+      ·
+      Collège Public — Marne Ardennes
+
+    </footer>
+
+
+  </main>
+
+</body>
+</html>
